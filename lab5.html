@@ -54,11 +54,29 @@
         output.innerHTML='нажата кнопка ' + buttonNum;
         output.style.backgroundColor=backColor;
         output.style.color=textColor;
+        output.style.borderBlock = border;
+        output.style.borderInline = border;
     }
-    showSum();
-    showRaz();
-    showPro();
-    showDel();
+
+    function changeRaschet() {
+        let input1 = document.getElementById('number1');
+        let input2 = document.getElementById('number2');
+        let input3 = document.getElementById('number3');
+        let input4 = document.getElementById('number4');
+
+        let resultat = document.getElementById('resultat');
+        let a = 100;
+        let b = 80;
+        let c = 150;
+        let d = 300;
+
+        let a1 = parseInt(input1.value);
+        let b2 = parseInt(input2.value);
+        let c3 = parseInt(input3.value);
+        let d4 = parseInt(input4.value);
+        let result = a*a1+b*b2+c*c3+d*d4;
+        resultat.innerHTML = 'Общая цена: ' + result + ' p';
+    }
     </script>
     <style>
         .message {
@@ -73,9 +91,15 @@
             background: lightgreen;
         }
         #output {
-            border: 1px;
             width: 300px;
-            height:40px;
+            height: 40px;
+        }
+        .korzina {
+            border: 2px solid yellowgreen;
+            border-radius: 5px;
+            width: 400px;
+            margin-top: 10px;
+            padding: 10px;
         }
     </style>
 </head>
@@ -102,6 +126,15 @@
         </div>
 
         <div id="output"></div>
+
+        <div class = 'korzina'>
+            <h2>Корзина</h2>
+            <label>Яблоки (100р/шт): <br><input type="number" value="0" min="0" id="number1"></label><br>
+            <label>Груши (80р/шт): <br><input type="number" value="0" min="0" id="number2"></label><br>
+            <label>Апельсины (150р/шт): <br><input type="number" value="0" min="0" id="number3"></label><br>
+            <label>Арбузы (300р/шт): <br><input type="number" value="0" min="0" id="number4"></label><br>
+            <input type="button" value="Рассчитать" onclick="changeRaschet()">
+            <p id="resultat"></p>
     </main>
 
     <footer onclick="showAuthor()">
