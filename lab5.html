@@ -77,6 +77,10 @@
         let result = a*a1+b*b2+c*c3+d*d4;
         resultat.innerHTML = 'Общая цена: ' + result + ' p';
     }
+    function showKrug(num) {
+            let krug = document.getElementById(num);
+            krug.style.opacity = 0;
+        }
     </script>
     <style>
         .message {
@@ -95,11 +99,23 @@
             height: 40px;
         }
         .korzina {
-            border: 2px solid yellowgreen;
+            border: 2px solid royalblue;
+            background-color: aquamarine;
             border-radius: 5px;
             width: 400px;
             margin-top: 10px;
             padding: 10px;
+        }
+        .krug {
+            margin-top: 28px;
+            margin-left: 5px;
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: 3px solid lightcoral;
+            border-radius: 60%;
+            padding-top: 5px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -135,6 +151,18 @@
             <label>Арбузы (300р/шт): <br><input type="number" value="0" min="0" id="number4"></label><br>
             <input type="button" value="Рассчитать" onclick="changeRaschet()">
             <p id="resultat"></p>
+        </div>
+
+        <div class = 'krug' id="1"  style="color: violet; background-color: yellowgreen;" onclick="showKrug(1)">1</div>
+        <div class = 'krug' id="2"  style="color: firebrick; background-color: fuchsia" onclick="showKrug(2)">2</div>
+        <div class = 'krug' id="3"  style="color:lightcoral; background-color:burlywood" onclick="showKrug(3)">3</div>
+        <div class = 'krug' id="4"  style="color:royalblue; background-color: rebeccapurple" onclick="showKrug(4)">4</div>
+        <div class = 'krug' id="5"  style="color:red ;background-color: khaki" onclick="showKrug(5)">5</div>
+        <div class = 'krug' id="6"  style="color:orchid ; background-color: darkmagenta" onclick="showKrug(6)">6</div>
+        <div class = 'krug' id="7"  style="color:gold ; background-color: hotpink" onclick="showKrug(7)">7</div>
+        <div class = 'krug' id="8"  style="color:yellow; background-color: darkcyan" onclick="showKrug(8)">8</div>
+        <div class = 'krug' id="9"  style="color:darkviolet;background-color: midnightblue" onclick="showKrug(9)">9</div>
+        <div class = 'krug' id="10" style="color:salmon ;background-color: floralwhite;" onclick="showKrug(10)">10</div>
     </main>
 
     <footer onclick="showAuthor()">
