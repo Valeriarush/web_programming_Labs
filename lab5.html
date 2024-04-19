@@ -7,11 +7,15 @@
     <title>Дядюн Валерия. Лабораторная работа 5</title>
     <link rel="stylesheet" href="main.css">
     <script>
-        function showSum(){
+        function showSum() {
         let a=5154;
         let b=7891;
         let result=a+b;
         alert(' Сумма ' + a + ' и '+ b +' равна '+result);
+    }
+    function showAuthor() {
+        let author='Автор страницы:\nДядюн Валерия Евгеньевна\nВсех привествую!';
+        alert( author);
     }
 
     showSum();
@@ -31,16 +35,16 @@
     </style>
 </head>
 <body>
-    <header>
+    <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать,кто автор страницы</div>     
+        <div class="message" onclick="showAuthor()">Узнать,кто автор страницы</div>     
     </main>
 
-    <footer>
+    <footer onclick="showAuthor()">
         &copy; Дядюн Валерия, ФБИ-13, 3 курс, 2024
     </footer>
 </body>
