@@ -5,15 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дядюн Валерия Евгеньевна. Лабораторные работы по WEB-программированию</title>
     <link rel="stylesheet" href="main.css">
+    <script src="lab8.js"></script>
+
+    <style>
+        .currentDate {
+            margin-top: 18px;
+            margin-left: 18px;
+            width: 500px;
+            padding: 20px;
+            background-color: royalblue;
+            color: black;
+            border: 3px ridge;
+            border-color: purple;
+            font-size: large;
+        }
+
+        .time {
+            color: black;
+            text-align: right;
+            margin-top: -20px;
+            font-size: medium;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
-    
+<body onload="showDate()">
+
     <header>
         НГТУ, ФБ, Лабораторная работа 8
+        <div class='time' id="time">00:00:00</div>
     </header>
      
     <main>
-      <div id="current-date"></div>
+      <div class="currentDate" id="current-date"></div>
     </main>
 
     <footer>
