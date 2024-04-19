@@ -1,0 +1,27 @@
+body {
+    background-color: lightblue;
+    color: maroon;
+    font-family: Arial;
+    margin: 0px;
+}
+
+header {
+    background-color: black;
+    color: lightgreen;
+    padding: 10px;
+    font-size: 16pt;
+}
+
+footer {
+    background-color:black;
+    color:lightgreen;
+    padding: 10px;
+    font-size: 16pt;
+    font-style: italic;
+    text-align: right
+}
+
+a {
+    text-decoration:none;
+    color: green;
+}
