@@ -69,6 +69,16 @@
                 }
             }
         }
+        function multiplicationTable() {
+            let blocks = document.getElementById('blocksTab');
+            let stud = (20);
+
+            for (let i=13; i<34 ;i++) {
+                let block = document.createElement('div');
+                block.innerHTML = i + " * " + stud + " = " + (i*stud)
+                blocks.appendChild(block)
+            }
+        }
     </script>
     
     <header>
@@ -99,6 +109,9 @@
         <input type="number" value="5" id="switch" placeholder="Введите число кругов">
         <button onclick="radGreen()">Красное/Зеленое</button>
         <div id="circles"></div>
+
+        <button onclick="multiplicationTable()">Таблица умножения на 20</button>
+        <div id="blocksTab"></div>
     </main>
 
     <footer>
