@@ -16,12 +16,44 @@
         let result=a+b;
         alert(' Сумма ' + a + ' и '+ b +' равна '+result);
     }
+    function showRaz() {
+        let inputA=document.getElementById('numberA');
+        let inputB=document.getElementById('numberB');
+
+        let a=parseInt(inputA.value);
+        let b=parseInt(inputB.value);
+        let result=a-b;
+        alert('Разность ' + a + ' и '+ b +' равна '+result);
+    }
+
+    function showPro() {
+        let inputA=document.getElementById('numberA');
+        let inputB=document.getElementById('numberB');
+
+        let a=parseInt(inputA.value);
+        let b=parseInt(inputB.value);
+        let result=a*b;
+        alert('Произведение ' + a + ' и '+ b +' равно '+result);
+    }
+
+    function showDel() {
+        let inputA=document.getElementById('numberA');
+        let inputB=document.getElementById('numberB');
+
+        let a=parseInt(inputA.value);
+        let b=parseInt(inputB.value);
+        let result=a/b;
+        alert('Частное ' + a + ' и '+ b +' равно '+result);
+    }
     function showAuthor() {
         let author='Автор страницы:\nДядюн Валерия Евгеньевна\nВсех привествую!';
         alert( author);
     }
 
     showSum();
+    showRaz();
+    showPro();
+    showDel();
     </script>
     <style>
         .message {
@@ -46,6 +78,9 @@
         <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Найти сумму</div>
+        <div class="message" onclick="showRaz()">Найти разность</div>
+        <div class="message" onclick="showPro()">Найти произведение</div>
+        <div class="message" onclick="showDel()">Найти частное</div>
         <div class="message" onclick="showAuthor()">Узнать,кто автор страницы</div>     
     </main>
 
