@@ -50,6 +50,20 @@
             position: relative;
             top: 70px;
         }
+        .filter {
+            border: 3px solid lavender;
+            cursor: pointer;
+            text-align: center;
+            background-color: rebeccapurple;
+            color: lightcoral;
+            padding: 30px;
+            margin: 50px;
+            hyphens: auto;
+            position: absolute;
+            top: 500px;
+            position: relative;
+            top: 80px;
+        }
     </style>
     <script>
         let number;
@@ -170,6 +184,39 @@
                 count2=2;
             }
         }
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if (color=='Красный' && type=='Футболка') {
+                wear.src = 'k_f.jpg';
+            }
+            else if (color=='Белый' && type=='Футболка') {
+                wear.src = 'b_f.jpg';
+            }
+            else if (color=='Черный' && type=='Футболка') {
+                wear.src = 'h_f.jpg';
+            }
+            else if (color=='Красный' && type=='Поло') {
+                wear.src = 'k_p.jpg';
+            }
+            else if (color=='Белый' && type=='Поло') {
+                wear.src = 'b_p.jpeg';
+            }
+            else if (color=='Черный' && type=='Поло') {
+                wear.src = 'h_p.jpg';
+            }
+            else if (color=='Красный' && type=='Майка') {
+                wear.src = 'k_m.jpg';
+            }
+            else if (color=='Белый' && type=='Майка') {
+                wear.src = 'b_m.jpg';
+            }
+            else if (color=='Черный' && type=='Майка') {
+                wear.src = 'h_m.jpg';
+            }
+        }
     </script>
 </head>
 <body>
@@ -233,6 +280,23 @@
         </div>
 
         <div class="expanding" onclick="ExpandingBlock(this)">Расширяющийся блок</div>
+
+        <div class="filter">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+            <button onclick="filter()">OK</button><br>
+            <img id="wear" style="width: 600px;">
+        </div>
     </main>
 
     <footer onclick="showAuthor()">
