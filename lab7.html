@@ -6,7 +6,7 @@
     <title>Дядюн Валерия Евгеньевна. Лабораторные работы по WEB-программированию</title>
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
+
     <script>
         function addBlocks() {
             let blocks = document.getElementById('blocks');
@@ -36,11 +36,33 @@
             let average = sum / exchange.length;
             document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
         }
+        function addTransparentBlocks() {
+            let transBlocks = document.getElementById('transparent-blocks');
+
+            for (let i=0; i<10; i++) {
+                let transBlock = document.createElement('div');
+                transBlock.style.opacity = (i*10) + '%';
+                transBlock.innerHTML = 'Блок №' + (i+1);
+
+                transBlocks.appendChild(transBlock);
+            }
+        }
     </script>
+    
     <header>
+<body>
         НГТУ, ФБ, Лабораторная работа 7
     </header>
-
+        <style>
+            .opacityBlock {
+                border: 3px solid red;
+                width: 350px;
+                margin: 25px;
+                padding: 10px;
+                text-align: center;
+                background-color: pink;
+            }
+        </style>      
     <main>
         <button>Создать блоки</button>
         <div id="block"></div> 
@@ -48,6 +70,9 @@
         <button onclick="showExchange()">Курс доллара</button>
         <table border="1" id="dollar-exchange"></table>
         <div id="detail"></div>
+
+        <button  onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
+        <div id="transparent-blocks"></div>
     </main>
 
     <footer>
