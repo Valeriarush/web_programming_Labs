@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дядюн Валерия. Лабораторная работа 6</title>
+    <title>Дядюн Валерия Евгеньевна. Лабораторные работы по WEB-программированию</title>
     <link rel="stylesheet" href="main.css">
-    
+</head>
+<body>
     <script>
         function addBlocks() {
             let blocks = document.getElementById('blocks');
@@ -16,21 +16,41 @@
 
                 blocks.appendChild(block);
             }
+        }
+        function showExchange() {
+            let exchange = [70.5174, 70.1217, 70.0414, 70.3847, 70.5991,
+                            70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
+            let table = document.getElementById('dollar-exchange');
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+
+            let sum=0;
+            for (let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
+        }
     </script>
-    
-</head>
-<body>
-    <header onclick="showAuthor()">
-        НГТУ, ФБ, Лабораторная работа 6
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
     </header>
 
     <main>
         <button>Создать блоки</button>
-        <div id="block"></div>
-   
+        <div id="block"></div> 
+
+        <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-exchange"></table>
+        <div id="detail"></div>
     </main>
 
-    <footer onclick="showAuthor()">
+    <footer>
         &copy; Дядюн Валерия, ФБИ-13, 3 курс, 2024
     </footer>
 </body>
