@@ -26,6 +26,15 @@
             margin: 10px auto;
             padding: 5px;
         }
+        .click {
+            border: 3px solid red;
+            width: 170px;
+            padding: 20px;
+            text-align: center;
+            background-color: pink;
+            color: black;
+            cursor: pointer;
+        }
     </style>
     <script>
         let number;
@@ -83,6 +92,58 @@
             screens[1].style.display = 'none';
             screens[2].style.display = 'none';
         }
+        function changeColor(div) {
+            if(div.style.backgroundColor == 'green') {
+                div.style.backgroundColor = 'red';
+                div.style.color = 'blue';
+                document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'blueviolet';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else if (div.style.backgroundColor == 'blue') {
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'white';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else if (div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'pink';
+                div.style.color = 'blue';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else {
+                div.style.backgroundColor = 'green';
+                document.getElementById('color-name').innerHTML = 'зеленый';
+            }
+
+        }
+
+        let positionLeft = true;
+        function changeClick(div) {
+            div.style.left = null;
+            div.style.right = null;
+            div.style.position = 'absolute';
+            if (positionLeft == true) {
+                div.style.transition = '2s';
+                div.style.right = '20px';
+                div.style.right = '10px';
+                div.style.transformation = 'rotate(0)';
+                positionLeft = false;
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'pink';
+            }
+            else {
+                div.style.transition = '2s';
+                div.style.left = '20px';
+                div.style.left = '10px';
+                div.style.transformation = 'rotate(4turn)';
+                positionLeft = true;
+                div.style.backgroundColor = 'pink';
+                div.style.color = 'blue';
+            }
+        }
     </script>
 </head>
 <body>
@@ -118,7 +179,7 @@
                 <button onclick="again()"> Сыграть ещё раз</button>
             </div>
         </div>
-        
+
         <div class="rools">
             <div class="rool">
                 <button onclick="OpenRules()">Показать правила игры</button>
@@ -135,6 +196,14 @@
                     <li>Если захотите еще раз сыграть, то нажмите на кнопку Сыграть еще раз</li>
                 </ol>
             </div>
+        </div>
+        
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">жёлтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
+        </div>
+        <div class="click" onclick="changeClick(this)">
+            Щёлкни меня
         </div>
     </main>
 
