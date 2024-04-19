@@ -3,6 +3,15 @@ body {
     color: maroon;
     font-family: Arial;
     margin: 0px;
+    transition: 600ms 5s;
+}
+
+body:hover {
+    background-color: LightBlue;
+    text-decoration: underline;
+    font-family: Lucida;
+    margin: 0px;
+    transition: 5s 300ms;
 }
 
 header {
@@ -12,6 +21,15 @@ header {
     font-size: 16pt;
 }
 
+header:hover {
+    background-image:linear-gradient(to right bottom, green, red, orange, blue );
+    text-decoration: underline;
+    background-color:white;
+    font-weight: bolder;
+    opacity:1;
+    transition: 5s 300ms;
+}
+
 footer {
     background-image:linear-gradient(to right bottom, yellow, blueviolet, fuchsia, aqua );
     color:darkblue;
@@ -19,6 +37,15 @@ footer {
     font-size: 16pt;
     font-style: italic;
     text-align: right
+}
+
+footer:hover{
+    background-color: blueviolet;
+    text-decoration: underline;
+    background-color:lavender;
+    font-weight: bolder;
+    opacity:1;
+    transition: 5s 300ms;
 }
 
 a {
