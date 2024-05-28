@@ -6,9 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Основные финансовые показатели</title>
     <link rel="stylesheet" href="main_rgz.css">
+    <script src="economy.js"></script>
 
     <style>
+        button {
+            font-size:large;
+            cursor: pointer;
+            height:150px;
+            width: 350px;
+            text-align: center;
+            position: relative;
+            border-color: floralwhite;
+            border-style: 5px outset;
+            background-color: rgb(0,114,197);
+            color: white;
+        }
 
+        .text{
+            margin-left: 320px;
+            text-align: center;
+            padding:20px;
+            font-size:35px;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
     </style>
 
 </head>
@@ -31,7 +52,19 @@
         </dl>      
     </header>
 
-    <main>
+    <main style="margin-top: 30px; text-align: center;">
+        <div class="text">
+            <b>Капитализация на текущий момент составляет:</b>110 441 160 000RUB <br>
+            <b>Объем торгов акций:</b> 55 323 938 RUB<br>
+        </div>
+
+        <div class="text">
+            <button onclick="stockPrice()">Курс закрытия акций на апрель 2023 года</button>
+            <table border="1" id="stock-price" style="margin: auto;"></table>
+            <div id="average-price"></div>
+            <div id="min"></div>
+            <div id="max"></div>
+        </div>
 
     </main>
 
